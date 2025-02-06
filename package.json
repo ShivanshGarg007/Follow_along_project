@@ -3,18 +3,17 @@
   "version": "1.0.0",
   "description": "ecommerce website",
   "main": "backend/server.js",
-
-"scripts": {
-  "test": "echo \"Error: no test specified\" && exit 1",
-  "dev": "concurrently \"nodemon backend/server.js\" \"npm run start:frontend\"",
-  "start": "node backend/server.js",
-  "start:frontend": "npm start --prefix frontend"
-},
-
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"nodemon backend/server.js\" \"npm run start:frontend\"",
+    "start": "node backend/server.js",
+    "start:frontend": "npm start --prefix frontend"
+  },
   "author": "\"Shivansh\"",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.7.9",
+    "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.3.3",
     "concurrently": "^9.1.2",
@@ -33,5 +32,8 @@
     "react-scripts": "^5.0.1",
     "redux": "^5.0.1",
     "styled-components": "^6.1.14"
+  },
+  "devDependencies": {
+    "multer": "^1.4.5-lts.1"
   }
 }

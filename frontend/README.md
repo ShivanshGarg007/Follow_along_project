@@ -2,6 +2,8 @@
 
 ## Key Features  
 
+
+
 ### 1. **REST API**  
    - Implements RESTful principles for efficient client-server communication.  
    - Endpoints for managing products, users, and orders.  
@@ -21,5 +23,7 @@
 ### 5. **User Authentication**  
    - Secure authentication with JWT.  
    - Role-based access control for users and admins.  
+
+
 
 ---  

@@ -19,6 +19,8 @@ const server = app.listen(process.env.PORT, () => {
     `Server is running on http://localhost:${process.env.PORT}`
   );
 });
+
+
 process.on("unhandledRejection", (err) => {
     console.log(`Shutting down the server for ${err.message}`);
     console.log(`shutting down the server for unhandled promise rejection`);
