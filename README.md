@@ -1,5 +1,3 @@
----
-
 # Follow Along E-Commerce Website
 
 ## Key Features
@@ -72,8 +70,6 @@ This milestone focused on setting up a solid backend infrastructure to support t
 
 ## Milestone 4: Creating User Model and Controller 🚀
 
-In **Milestone 4**, we expanded our backend by introducing **User Models**, **Controllers**, and **File Uploads**.
-
 ### ✅ **User Model Implementation**
 - Defined a **User Schema** using Mongoose to store user details (name, email, password, etc.).
 - Implemented necessary **validations** to ensure data integrity.
@@ -102,10 +98,8 @@ This milestone strengthened the **user management** aspect of our application, m
 
 ## Milestone 5: Creating the Signup Page 🚀
 
-In **Milestone 5**, we focused on building the frontend Sign-Up page and implementing client-side form validation.
-
 ### ✅ **Sign-Up Page UI Development**
-- Created the user interface for the Sign-Up page using HTML and CSS (likely with Tailwind CSS).
+- Created the user interface for the Sign-Up page using Tailwind CSS.
 - Included fields for name, email, and password.
 - Designed the page to be user-friendly and visually appealing.
 
@@ -117,13 +111,11 @@ In **Milestone 5**, we focused on building the frontend Sign-Up page and impleme
 ### ✅ **README Update**
 - Documented Milestone 5 progress in this README file.
 
-This milestone focused on creating the user registration interface and ensuring that the data entered by the user is valid before being sent to the backend.  This improves user experience and reduces the load on the server.
+This milestone focused on creating the user registration interface and ensuring that the data entered by the user is valid before being sent to the backend. This improves user experience and reduces the load on the server.
 
 ---
 
 ## Milestone 6: Backend Signup Endpoint and Password Encryption 🚀
-
-In **Milestone 6**, we implemented the backend endpoint to handle user signup and securely store user data, including encrypting passwords.
 
 ### ✅ **Signup Endpoint Implementation**
 - Created a new route and controller function to handle POST requests to the signup endpoint.
@@ -140,4 +132,29 @@ In **Milestone 6**, we implemented the backend endpoint to handle user signup an
 ### ✅ **README Update**
 - Documented Milestone 6 progress in this README file.
 
-This milestone focused on securely handling user registration on the backend, including the crucial step of password encryption.  This is essential for protecting user data and maintaining security best practices.
+This milestone focused on securely handling user registration on the backend, including the crucial step of password encryption. This is essential for protecting user data and maintaining security best practices.
+
+---
+
+## Milestone 7: Backend Login Endpoint and Password Validation 🚀
+
+### ✅ **Login Endpoint Implementation**
+- Created a backend route to handle user login.
+- Accepted user credentials (email/username and password) from the frontend.
+
+### ✅ **User Authentication Process**
+- Retrieved the corresponding user from the database using the provided email.
+- If the user does not exist, returned an error: "User does not exist."
+- Used `bcrypt.compare` to compare the entered password with the stored hashed password.
+- If the passwords matched, authenticated the user and proceeded to login.
+- If they did not match, returned an authentication error.
+
+### ✅ **Security Measures**
+- Ensured that passwords were stored as hashes using bcrypt to maintain security.
+- Handled potential security vulnerabilities, such as brute-force attacks.
+
+### ✅ **README Update**
+- Documented Milestone 7 progress in this README file.
+
+This milestone introduced the backend authentication process, enabling users to log in securely by verifying their credentials against stored, encrypted passwords. This is crucial for maintaining data security and user authentication in the application.
+
