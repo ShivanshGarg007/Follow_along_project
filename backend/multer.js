@@ -1,30 +1,28 @@
-const multer = require("multer");
-const path = require("path");
+const multer = require('multer');
 
-// Configure storage settings
+
+// Configure multer storage
 const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, path.join(__dirname, "uploads/")); // Save files to 'backend/uploads'
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname)); // Rename file
-    }
+  destination: '../uploads',
+  filename: function (req, file, cb) {
+    console.log(req.body);
+    const uniqueSuffix = Date.now() + '-' + Math.round.apply(Math.random() * 1e9);
+    // Define a unique filename
+    const filename = file.originalname.split(".")[0];
+    cb(null, filename + "-" + uniqueSuffix + ".png"); // Define
+  },
 });
 
-// File filter to accept only images
-const fileFilter = (req, file, cb) => {
-    if (file.mimetype.startsWith("image/")) {
-        cb(null, true);
-    } else {
-        cb(new Error("Only image files are allowed"), false);
-    }
-};
-
-// Initialize multer upload instance
-const upload = multer({
-    storage: storage,
-    fileFilter: fileFilter,
-    limits: { fileSize: 1024 * 1024 * 5 }, // 5MB limit
+const pstorage = multer.diskStorage({
+  destination: '../products',
+  filename: function (req, file, cb) {
+    console.log(req.body);
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+    const filename = file.originalname.split(".")[0];
+    cb(null, filename + "-" + uniqueSuffix + ".png"); // Define
+  },
 });
 
-module.exports = { upload };
+// Initialize upload object
+exports.upload = multer({ storage: storage });
+exports.pupload = multer({ storage: pstorage });

@@ -3,7 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import { server } from '../server'
+// import { server } from '../server'
+const server = "http://localhost:8000";
 
 
 const ActivationPage = () => {
