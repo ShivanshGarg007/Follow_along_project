@@ -115,62 +115,44 @@ This milestone focused on creating the user registration interface and ensuring 
 
 ---
 
-## Milestone 6: Backend Signup Endpoint and Password Encryption 🚀
+## Milestone 10: Product Schema & Endpoint Creation 🚀
 
-### ✅ **Signup Endpoint Implementation**
-- Created a new route and controller function to handle POST requests to the signup endpoint.
-- Received user data from the frontend signup form.
+### ✅ **Product Schema Implementation**
+- Defined a **Product Schema** using Mongoose to store product details (name, description, price, image URL, etc.).
+- Ensured necessary validations such as required fields and correct data types.
 
-### ✅ **Password Encryption**
-- Used `bcrypt` to hash the user's password before storing it in the database.
-- Ensured that passwords are never stored in plain text.
+### ✅ **Product Endpoint Creation**
+- Developed a **POST endpoint** to receive and store product details in MongoDB.
+- Implemented validation to ensure only valid data is saved.
 
-### ✅ **User Data Storage**
-- Stored the complete user data (name, email, hashed password, etc.) in the MongoDB database.
-- Implemented error handling for duplicate entries and other potential issues.
-
-### ✅ **README Update**
-- Documented Milestone 6 progress in this README file.
-
----
-
-## Milestone 7: Backend Login Endpoint and Password Validation 🚀
-
-### ✅ **Login Endpoint Implementation**
-- Created a backend route to handle user login.
-- Accepted user credentials (email/username and password) from the frontend.
-
-### ✅ **User Authentication Process**
-- Retrieved the corresponding user from the database using the provided email.
-- Used `bcrypt.compare` to compare the entered password with the stored hashed password.
-- Authenticated the user and allowed login if credentials matched.
-
----
-
-## Milestone 8: Product Card Component and Homepage Layout 🚀
-
-### ✅ **Frontend Product Card Component**
-- Designed and implemented a reusable Product Card component.
-- Utilized props to dynamically render product details like name, image, and price.
-
-### ✅ **Homepage Layout for Products**
-- Created a responsive homepage to display multiple Product Cards.
-- Used Grid/Flexbox for optimal layout and user experience.
-
----
-
-## Milestone 9: Product Input Form 🚀
-
-### ✅ **Product Form Implementation**
-- Designed a form for adding product details such as name, price, and description.
-- Implemented an option for uploading multiple product images.
-
-### ✅ **Database Integration**
-- Structured the form to send product data to the backend for storage in MongoDB.
-- Ensured proper validation and error handling.
+### ✅ **Data Integrity & Security**
+- Enforced validation rules to prevent incorrect data entries.
+- Added error handling for invalid requests and duplicate product entries.
 
 ### ✅ **README Update**
-- Documented Milestone 9 progress in this README file.
+- Documented Milestone 10 progress in this README file.
 
-This milestone focused on enabling product input, which is essential for expanding the e-commerce platform by allowing users to add new products dynamically.
+This milestone focused on defining the product structure and creating an API to add products to the database securely.
+
+---
+
+## Milestone 11: Displaying Products Dynamically 🚀
+
+### ✅ **Product Data Retrieval**
+- Created a **GET endpoint** to retrieve all stored products from MongoDB.
+- Extracted data from the database and sent it to the frontend.
+
+### ✅ **Frontend Data Handling**
+- Wrote a function in the frontend to **fetch product data** from the backend API.
+- Handled API responses, ensuring data is properly received and formatted.
+
+### ✅ **Dynamic Product Display**
+- Integrated the received product data into the existing **Product Card component**.
+- Displayed products dynamically on the homepage.
+- Ensured a responsive and visually appealing layout using Tailwind CSS.
+
+### ✅ **README Update**
+- Documented Milestone 11 progress in this README file.
+
+This milestone focused on bridging the backend and frontend by retrieving product data and displaying it dynamically in the UI. This makes the homepage fully functional by showcasing stored products dynamically.
 
