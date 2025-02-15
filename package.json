@@ -31,9 +31,11 @@
     "react-router-dom": "^7.1.5",
     "react-scripts": "^5.0.1",
     "redux": "^5.0.1",
-    "styled-components": "^6.1.14"
+    "styled-components": "^6.1.14",
+    "webpack-dev-server": "^5.2.0"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "multer": "^1.4.5-lts.1"
   }
 }
