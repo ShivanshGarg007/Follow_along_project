@@ -64,6 +64,8 @@ function Myproduct({ _id, name, images, description, price }) {
                 >
                     Delete
                 </button>
+
+                
             </div>
         </div>
     );
