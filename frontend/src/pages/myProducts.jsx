@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Myproduct from "../components/myproduct"; // <-- Import the Product component
+import {axios} from "axios";
 
 export default function MyProducts() {
     const [products, setProducts] = useState([]);
@@ -41,6 +42,9 @@ export default function MyProducts() {
                 {products.map((product) => (
                     <Myproduct key={product._id} {...product} />
                 ))}
+
+
+                
             </div>
         </div>
     );
