@@ -42,6 +42,9 @@ export default function MyProducts() {
                 {products.map((product) => (
                     <Myproduct key={product._id} {...product} />
                 ))}
+
+
+                
             </div>
         </div>
     );
