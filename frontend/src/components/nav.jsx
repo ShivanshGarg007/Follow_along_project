@@ -57,7 +57,6 @@ const NavBar = () => {
                             )}
                         </button>
                     </div>
-
                     <div className="hidden md:flex md:items-center md:justify-center w-full">
                         <ul className="flex space-x-6">
                             <li>
