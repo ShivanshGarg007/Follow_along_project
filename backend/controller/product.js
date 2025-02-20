@@ -1,4 +1,3 @@
-
 // backend/controllers/product.js
 
 const express = require('express');
