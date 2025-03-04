@@ -4,7 +4,7 @@ const connectDatabase = () => {
   mongoose
     .connect(process.env.DB_URL)
     .then((data) => {
-      console.log(`MongoDB connected with server: ${data.connection.host}`);
+      console.log(`MongoDB connected with server`);
     })
     .catch((err) => {
       console.error(`Database connection failed: ${err.message}`);
