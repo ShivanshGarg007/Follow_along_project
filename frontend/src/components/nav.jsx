@@ -57,6 +57,7 @@ const NavBar = () => {
                             )}
                         </button>
                     </div>
+
                     <div className="hidden md:flex md:items-center md:justify-center w-full">
                         <ul className="flex space-x-6">
                             <li>
@@ -106,6 +107,18 @@ const NavBar = () => {
                                     }
                                 >
                                     Cart
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to="/profile"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? "text-white font-semibold px-3 py-2 rounded-md text-sm transition-colors duration-200"
+                                            : "text-gray-200 hover:text-white px-3 py-2 rounded-md text-sm transition-colors duration-200"
+                                    }
+                                >
+                                    Profile
                                 </NavLink>
                             </li>
                         </ul>
@@ -170,6 +183,20 @@ const NavBar = () => {
                                 Cart
                             </NavLink>
                         </li>
+                        <li>
+                            <NavLink
+                                to="/profile"
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? "block text-white font-semibold px-3 py-2 rounded-md text-base transition-colors duration-200"
+                                        : "block text-gray-200 hover:text-white px-3 py-2 rounded-md text-base transition-colors duration-200"
+                                }
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Profile
+                            </NavLink>
+                        </li>
+                        
                     </ul>
                 </div>
             )}

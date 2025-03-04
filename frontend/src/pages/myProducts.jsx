@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Myproduct from "../components/myproduct"; // <-- Import the Product component
-import {axios} from "axios";
+import axios from "axios";
 
 export default function MyProducts() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const email = "ashupatil1357@gmail.com";
+    const email = "shivanshgarg007@gmail.com";
 
     useEffect(() => {
         fetch(`http://localhost:8000/api/v2/product/my-products?email=${email}`)
