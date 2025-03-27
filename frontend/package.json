@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@paypal/react-paypal-js": "^8.8.2",
     "axios": "^1.7.9",
     "cors": "^2.8.5",
     "country-state-city": "^3.2.1",
