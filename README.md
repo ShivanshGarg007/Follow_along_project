@@ -374,3 +374,27 @@
 - Added two payment options: Cash on Delivery (COD) and Online Payment.
 - Implemented radio buttons to allow users to select their preferred payment method.
 - When "Online Payment" is selected, PayPal buttons will be displayed dynamically.
+
+  
+### Milestone 30: PayPal Integration 💳
+
+✅ PayPal Account Setup
+- Created a PayPal Developer account and a Sandbox account.
+- Retrieved and stored the Client ID.
+
+✅ Implementation
+- Installed react-paypal-js.
+- Used PayPalScriptProvider to integrate PayPal payment options.
+
+✅ Testing
+- Verified transactions using the Sandbox environment.
+
+
+### Milestone 31: JWT Auth & Member CRUD 🔐
+✅ JWT Authentication
+- Implemented secure login and signup using JWT tokens.
+- Stored token in localStorage and protected member routes with auth middleware.
+
+✅ Member CRUD + UI Enhancements
+- Added full Create, Read, Update, Delete features for gym members.
+- Enhanced UI with field icons, top banner, and improved layout for better experience.
