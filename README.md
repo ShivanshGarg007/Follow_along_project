@@ -398,3 +398,42 @@
 ✅ Member CRUD + UI Enhancements
 - Added full Create, Read, Update, Delete features for gym members.
 - Enhanced UI with field icons, top banner, and improved layout for better experience.
+
+
+---
+
+### Milestone 32: Redux Global State for Email 📬
+
+✅ Redux Setup  
+- Integrated Redux Toolkit for state management.  
+- Configured the store and created a slice to manage user email.
+
+✅ Email Dispatch on Login  
+- Used `dispatch` in the Login page to save the user's email to the global state.
+
+✅ Access Email Across Pages  
+- Used `useSelector` to retrieve and display the stored email on other pages.
+
+✅ Benefits  
+- Centralized state handling for cleaner code.  
+- Improved data accessibility across components without prop drilling.
+
+--- 
+
+
+### Milestone 33: JWT Token in Cookie 🍪
+
+✅ JWT Token Creation  
+- Installed `jsonwebtoken` package via NPM.  
+- Generated JWT token using `sign()` with user's email and ID.  
+- Set `maxAge` to define token expiry time.
+
+✅ Storing Token in Cookie  
+- Used `res.cookie()` to store JWT token in the browser.  
+- Configured cookie options for security and expiry.
+
+✅ Benefits  
+- Tokens now persist in cookies for improved authentication.  
+- Enables secure session handling without relying on localStorage.
+
+--- 
