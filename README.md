@@ -311,6 +311,8 @@
 ✅ Place Order Button
 - Added a "Place Order" button at the bottom for final confirmation.
 
+--
+
 ### Milestone 25: Order Processing Backend ⚙️
 
 ✅ Order API Implementation
@@ -323,6 +325,8 @@
 - Stored each product as a separate order with the same address.
 - Used the existing Order schema to save order details in MongoDB.
 
+--
+
 ### Milestone 26: Fetch User Orders API 📦
 
 ✅ Order Retrieval Endpoint
@@ -332,6 +336,8 @@
 ✅ Fetch & Response
 - Used the `_id` to fetch all orders of the user from the database.
 - Sent all user orders in the API response.
+
+--
 
 ### Milestone 27: My Orders Page 🛍️
 
@@ -346,6 +352,7 @@
 - Displayed all user orders on the page.
 - Added "My Orders" to the navbar for easy access.
 
+--
 
 ### Milestone 28: Order Cancellation Feature 
 
@@ -361,6 +368,8 @@
 - Sent API request on button click.
 - Updated UI after successful cancellation.
 
+--
+
 ### Milestone 29: PayPal Integration for Online Payments 💳
 
 ✅ PayPal Developer Setup
@@ -375,6 +384,7 @@
 - Implemented radio buttons to allow users to select their preferred payment method.
 - When "Online Payment" is selected, PayPal buttons will be displayed dynamically.
 
+--
   
 ### Milestone 30: PayPal Integration 💳
 
@@ -389,6 +399,7 @@
 ✅ Testing
 - Verified transactions using the Sandbox environment.
 
+--
 
 ### Milestone 31: JWT Auth & Member CRUD 🔐
 ✅ JWT Authentication
@@ -435,5 +446,25 @@
 ✅ Benefits  
 - Tokens now persist in cookies for improved authentication.  
 - Enables secure session handling without relying on localStorage.
+
+--- 
+
+### Milestone 34: Validating JWT Token from Cookie 🔐
+
+✅ Extracting JWT from Cookie  
+- Retrieved the JWT token from the browser’s cookie storage.  
+- Sent the token to the backend with each request.
+
+✅ JWT Token Validation  
+- Created a middleware in the backend to validate the incoming JWT token.  
+- Used `verify()` method from `jsonwebtoken` to decode and verify token authenticity.  
+
+✅ Route Protection  
+- Applied the JWT validation middleware to secure routes.  
+- Ensured only authenticated users can access protected pages.
+
+✅ Benefits  
+- Enhances app security by verifying token on every request.  
+- Prevents unauthorized access to sensitive routes and pages.
 
 --- 
