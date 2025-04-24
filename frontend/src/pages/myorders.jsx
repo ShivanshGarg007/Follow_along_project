@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import Nav from '../components/nav'
+import axios from '../axiosConfig';
+import Nav from '../components/nav';
+import { useSelector } from 'react-redux';
 
 const MyOrdersPage = () => {
     const [orders, setOrders] = useState([]);
-    const defaultEmail = 'ashupatil1357@gmail.com';
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
+    const email = useSelector((state) => state.user.email);
 
     const fetchOrders = async () => {
+        if (!email) return;
         try {
             setLoading(true);
             setError('');
-            const response = await axios.get('http://localhost:8000/api/v2/orders/myorders', {
-                params: { email: defaultEmail },
+            const response = await axios.get('/api/v2/orders/myorders', {
+                params: { email },
             });
             setOrders(response.data.orders);
         } catch (err) {
@@ -23,22 +25,11 @@ const MyOrdersPage = () => {
         }
     };
 
-    // Cancel order handler
     const cancelOrder = async (orderId) => {
-        console.log("aa")
         try {
-
-
-
-            // Update the order in local state: either remove or update its status.
-                        // Update the order in local state: either remove or update its status.            
-            const response = await axios.patch(`http://localhost:8000/api/v2/orders/cancel-order/${orderId}`);
-            // Update the order in local state: either remove or update its status.
-            setOrders((prevOrders) =>
-                prevOrders.map((order) =>
-                    order._id === orderId ? { ...order, status: response.data.order.status } : order
-                )
-            );
+            // Example route patch / cancel might not exist in your code
+            const response = await axios.patch(`/api/v2/orders/cancel-order/${orderId}`);
+            // Update local state or refetch
             fetchOrders();
         } catch (err) {
             console.error(err);
@@ -48,7 +39,8 @@ const MyOrdersPage = () => {
 
     useEffect(() => {
         fetchOrders();
-    }, []);
+        // eslint-disable-next-line
+    }, [email]);
 
     return (
         <>
@@ -56,14 +48,8 @@ const MyOrdersPage = () => {
             <div className="min-h-screen bg-gray-100 py-10">
                 <div className="max-w-4xl mx-auto px-4">
                     <h1 className="text-4xl font-extrabold text-center mb-10">My Orders</h1>
-
-                    {loading && (
-                        <p className="text-center text-blue-500 text-lg">Loading orders...</p>
-                    )}
-                    {error && (
-                        <p className="text-center text-red-500 text-lg">{error}</p>
-                    )}
-
+                    {loading && <p className="text-center text-blue-500 text-lg">Loading orders...</p>}
+                    {error && <p className="text-center text-red-500 text-lg">{error}</p>}
                     {orders.length > 0 ? (
                         <div className="grid gap-8">
                             {orders.map((order) => (
@@ -79,7 +65,6 @@ const MyOrdersPage = () => {
                                             ${order.totalAmount}
                                         </p>
                                     </div>
-
                                     <div className="mb-4">
                                         <h2 className="text-xl font-semibold mb-2">Shipping Address</h2>
                                         <div className="text-gray-700 ml-4 space-y-1">
@@ -97,7 +82,6 @@ const MyOrdersPage = () => {
                                             </p>
                                         </div>
                                     </div>
-
                                     <div className="mb-4">
                                         <h2 className="text-xl font-semibold mb-2">Items</h2>
                                         <ul className="list-disc ml-8 space-y-1 text-gray-700">
@@ -108,8 +92,6 @@ const MyOrdersPage = () => {
                                             ))}
                                         </ul>
                                     </div>
-
-                                    {/* Cancel button (hide if already cancelled) */}
                                     {order.orderStatus !== 'Cancelled' && (
                                         <button
                                             onClick={() => cancelOrder(order._id)}
