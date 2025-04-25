@@ -468,3 +468,7 @@
 - Prevents unauthorized access to sensitive routes and pages.
 
 --- 
+
+### Milestone 35: Share Frontend and Backend Deploy Link
+- Frontend:
+- Backend: 
